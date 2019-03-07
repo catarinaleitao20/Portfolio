@@ -20,26 +20,35 @@ body{
 
 
 .main-row {
+
+	min-height: calc(100vh - 100px - 200px);
 	height: 100%;
 	display: flex;
+
 	justify-content: space-between;
-	align-items: stretch;
 
 }
 
 .nav-bar {
+	background-color: #00CCCC;
 	width: 15%; 
 	display: flex;
-	flex-flow:column nowrap;
+	flex-direction: column;
+	text-align: center;
+
 }
 
-.nav-bar a{
-	text-align: center;
-	padding: 20px;
-	background-color: #00CCCC;
+
+.nav-bar li a{
+	height: 100px;
+	padding: 30px;
+	font-size: 20px;
+	display: block;
+	list-style-type: none;
 	color: white;
 	text-decoration:none;
-	font-size: 20px;
+	text-align: center;
+
 }
 
 .nav-bar a:hover{
@@ -47,13 +56,56 @@ body{
 	color:black;
 }
 
+.nav-bar li a.active{
+
+    background-color:#00e6e6;
+    color: white;
+    font-weight: bold;
+}
+
+
 .main { 
 	width: 70%;
 	padding: 14px;  
 	background-color: white;
 	color:black;
 	margin-right: auto;
-	flex:2;
+}
+
+.galerias{
+	display: flex;
+	flex-wrap: wrap; 
+	max-height: 200vh;
+
+
+}
+.galeria {
+	width: 200px;
+	margin: 10px;
+	border: 1px solid #ccc;
+
+}
+
+.galeria img{
+	width: 130px;
+	height: 130px;
+	margin: 5px;
+
+}
+
+.galeria .descr{
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+
+.formulario{
+		background:rgba(58,63,68,0.5);
+  border-radius: 5px;
+  box-shadow: 0 1.5px 0 0 rgba(0,0,0,0.1);
+  width:450px;
+  display: flex;  
+  flex-direction: column;
 }
 
 .footer{
@@ -61,5 +113,5 @@ body{
 	width: 100%;
 	background-color: black;
 	color: white;
-	padding: 40px;
+	padding: 30px;
 }
