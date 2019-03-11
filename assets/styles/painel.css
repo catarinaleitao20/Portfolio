@@ -1,17 +1,25 @@
 .setas{
-	margin: auto;
 	display: flex;
 	justify-content: center;
 	position: absolute;
+	align-items: center;
 	bottom: 100px;
+	/*alinhar horizontalmente */
+	left:50%; 
+	transform: translateX(-50%); 
 
+}
+
+.tema-sombra{
+	background-color: rgba(0,0,0,0.5);
+	padding: 8px 12px;
+	border-radius: 12px;
 }
 
 .seta-1{ 
 	border-right: 30px solid white;
 	border-top: 30px solid transparent;  
 	border-bottom: 30px solid transparent;
-	right: 400px;
 }
 
 
@@ -19,11 +27,9 @@
 	border-left: 30px solid white; 
 	border-top: 30px solid transparent;  
 	border-bottom: 30px solid transparent; 
-	position: relative;
-	left: 400px;
 }
 
 .home{
-	margin-left: 150px
+	margin: 0 150px;
 }
 

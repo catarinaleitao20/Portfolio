@@ -87,6 +87,7 @@ body{
 	margin:auto;
 	display: flex;
 	justify-content: center;
+	box-shadow: 0 0 5px gray;
 }
 
 .about {
@@ -94,11 +95,13 @@ body{
 	background-color: whitesmoke;
 	margin: 50px;
 	width: 100%;
+	box-shadow: 0 0 5px gray;
 }
 
 .about p{
 	margin:auto;
 	margin-top:20px;
+	padding-bottom: 10px;
 	width: 50%;
 }
 
@@ -223,7 +226,7 @@ input {
 .noticias-item{
 	margin-right: 5px;
 	margin-left: 5px;
-	padding: 10px;
+	padding: 5px;
 
 }
 
@@ -238,8 +241,13 @@ input {
 	width: 400px;
 	height: 300px;
 	margin: 50px;
-	margin-left: 300px;
+	margin-left: 250px;
+	margin-right: 250px;
+}
 
+.not-p{
+	margin-left: 193px;
+	width: 60%;
 }
 
 .link-news {
