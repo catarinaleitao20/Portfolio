@@ -1,0 +1,29 @@
+.setas{
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	bottom: 100px;
+
+}
+
+.seta-1{ 
+	border-right: 30px solid white;
+	border-top: 30px solid transparent;  
+	border-bottom: 30px solid transparent;
+	right: 400px;
+}
+
+
+.seta-2{ 
+	border-left: 30px solid white; 
+	border-top: 30px solid transparent;  
+	border-bottom: 30px solid transparent; 
+	position: relative;
+	left: 400px;
+}
+
+.home{
+	margin-left: 150px
+}
+

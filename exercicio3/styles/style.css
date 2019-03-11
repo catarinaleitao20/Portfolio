@@ -1,0 +1,68 @@
+body{
+	background-color: black;
+	margin: 0px;
+	 display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	font-family: 'Press Start 2P';
+  	height: 100vh;
+}
+
+.principal{
+	width: 400px;
+
+
+}
+
+.titulo{
+	text-align: center;
+		margin-top: 1px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	font-size: 16px;
+	border-bottom: 1px dashed blue;
+}
+
+.titulo-1{
+	color:fuchsia;
+}
+
+.titulo-2{
+	color:white;
+	letter-spacing: 10px;
+}
+
+.titulo-3{
+	color:cyan;
+	
+}
+
+.texto p{
+	color:white;
+	text-align: center;
+}
+
+p{
+	margin-top: 1px;
+	margin-bottom: 1px;
+
+}
+
+.ultimo{
+	margin-bottom: 15px;
+}
+
+
+.texto .special {
+	color:yellow;
+}
+
+.copy{
+	border-top: 1px dashed blue;
+	text-align: center;
+	color:red;
+}
+
+.copy p{
+	margin-top: 2px;
+}

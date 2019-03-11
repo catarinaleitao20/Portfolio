@@ -15,7 +15,10 @@ body{
 	height: 100px;
 	padding: 30px;
 	background-color: black;
-	text-align: center;
+}
+
+.header h1{
+	text-align: left;
 }
 
 
@@ -24,31 +27,30 @@ body{
 	min-height: calc(100vh - 100px - 100px);
 	height: 100%;
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
 
 }
 
 .nav-bar {
-	background-color: #00CCCC;
-	width: 12%; 
+	background-color: #BEBEBE;
+	border-top: 2px solid white;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	text-align: center;
-
-
+	list-style: none;
+	justify-content: center;
+	height: 40px;
 }
 
 
 .nav-bar li a{
-	height: 84px;
-	padding: 29px;
+	padding: 10px 50px 10px 50px;
 	font-size: 20px;
 	display: block;
-	list-style-type: none;
 	color: white;
+	font-weight: bold;
 	text-decoration:none;
 	text-align: center;
-
 }
 
 .nav-bar a:hover{
@@ -58,7 +60,7 @@ body{
 
 .nav-bar li a.active{
 
-    background-color:#00e6e6;
+    background-color:#000000;
     color: white;
     font-weight: bold;
 }
@@ -70,6 +72,12 @@ body{
 	background-color: white;
 	color:black;
 	margin-right: auto;
+	margin-left: auto;
+}
+
+.main h1{
+	text-align: center;
+	margin-bottom: 0;
 }
 
 .imagem-perfil{
@@ -84,13 +92,14 @@ body{
 .about {
 
 	background-color: whitesmoke;
-	margin: 20px;
+	margin: 50px;
 	width: 100%;
 }
 
 .about p{
-	margin:20px;
-	text-align: center;
+	margin:auto;
+	margin-top:20px;
+	width: 50%;
 }
 
 /* Galeria */
@@ -101,8 +110,9 @@ body{
 
 }
 .galeria {
-	width: calc(33.33% -20px);
+	width: calc(33.33% - 20px);
 	margin: 10px;
+	margin-top: 40px;
 	padding: 5px;
 	border: 1px solid #ccc;
 	text-align: center;
@@ -138,11 +148,12 @@ hr{
 
 }
 
-h1{
+.wrapper h1{
 	text-align: center;
-	margin-bottom: 50px;
+	margin-bottom: 70px;
 	font-size: 35px;
 }
+
 .contacto{
 	display: flex;
 	justify-content: space-around;
@@ -157,7 +168,6 @@ h1{
 .form{
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	margin-bottom: 50px;
 }
 
@@ -202,6 +212,7 @@ input {
 	list-style: none;
 	background-color: whitesmoke;
 	width: 100%;
+	margin-top: 40px;
 	box-shadow: 2px 3px 6px #888888;
 	display: flex;
 	flex-wrap: nowrap; 
@@ -221,6 +232,14 @@ input {
 	height: 150px;
 	margin: 5px;
 	border-radius: 5px;
+}
+
+.not{
+	width: 400px;
+	height: 300px;
+	margin: 50px;
+	margin-left: 300px;
+
 }
 
 .link-news {
@@ -259,4 +278,10 @@ input {
 div .info {
 	color: white;
 	text-align: center;
+}
+
+.social-media{
+	margin-top: 10px;
+	width: 30px;
+	height: 30px;
 }

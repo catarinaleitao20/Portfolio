@@ -1,0 +1,63 @@
+body{
+	background-color: black;
+	margin: 0px;
+	 display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	font-family: 'Courier New';
+
+}
+
+.principal{
+	width: 400px;
+
+}
+
+.titulo{
+	color: cyan;
+	text-align: center;
+
+}
+
+.texto{
+	color:yellow;
+	align-items: center;
+}
+
+p{
+	margin-top: 2px;
+	margin-bottom: 2px;
+
+}
+
+.ultimo {
+	margin-bottom: 90px;
+}
+
+.link{
+	text-align: center;
+}
+
+.link a{
+	color:white;
+	text-decoration: none;
+	text-align: center;
+}
+
+.link a:hover{
+	animation-name: blink-underline;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes blink-underline {
+	0% {
+		text-decoration: underline;
+		color: yellow;
+	}
+
+	50% {
+		text-decoration: none;
+		color: white;
+	}
+}
