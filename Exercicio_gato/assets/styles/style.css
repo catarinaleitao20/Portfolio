@@ -1,0 +1,98 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Actor';
+
+}
+
+.principal {
+	margin: 10px;
+	width: 250px;
+	border:1px solid gray;
+	position: relative;	
+}
+
+.info-ad{
+	background-color: rgba(10,23,55,0.3);
+	height: 40px;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    
+}
+
+.infoad-text{
+	color: white;
+	font-size: 20px;
+	margin: 10px;
+	padding-top: 5px;
+}
+
+.info-ad button{
+	background-color:#0099FF;
+	color:white;
+	border-radius: 5px;
+	border:2px solid white;
+	padding: 5px;
+	margin: 5px;
+	width: 70px;
+	font-weight: bold;
+}
+
+
+.image{
+	width: 100%;
+}
+
+.info{
+	font-size: 20px;
+	padding: 20px 10px 20px 10px;
+	line-height: 25px;
+}
+
+.info-line{
+	display: flex;
+	justify-content: space-between;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.value{
+	background-color: #D3D3D3;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.donate_button{
+	background-color: #0099FF;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 5px;
+	margin-left: 10px;
+	border-radius: 3px;
+	border-style: none;
+	width: 70px;
+}
+
+.donate_button.donated{
+	background-color: green;
+}
+
+.call{
+	background-color: #33CC00;
+	color:white;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 10px;
+
+
+}
