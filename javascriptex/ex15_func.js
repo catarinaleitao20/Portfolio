@@ -154,18 +154,14 @@ let jogadores=[
 	},
 ]
 
+
+function chamaJogador(jogador){
+	console.log('Chama-se o jogador: '+jogador.nome.primeiro+' '+jogador.nome.ultimo);
+}
+
 for (let i = 0; i < 11; i++) {
 	
 	let jogador = jogadores[i];
-	console.log(jogador.nome.primeiro+' '+ jogador.nome.ultimo+ ','+' '+'número'+ ' ' +jogador.numero+','+' '+'joga como'+ ' '+jogador.posicao);
-
+		
+	chamaJogador(jogadores[i]);
 }
-
-let i=0;
-while (i < 11){
-	let jogador = jogadores[i];
-
-	console.log(jogador.nome.primeiro+' '+ jogador.nome.ultimo+ ','+' '+'número'+ ' ' +jogador.numero+','+' '+'joga como'+ ' '+jogador.posicao);
-	i++;
-}
-

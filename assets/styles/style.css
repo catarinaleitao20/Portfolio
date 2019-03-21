@@ -6,20 +6,144 @@
 
 
 body{
-	color: white;
+
 	font-family: 'Montserrat', sans-serif;
 
+}
+
+:root {
+
+	/*HEADER*/
+	--header-color:black;
+	--header-textcolor:white;
+	--header-buttoncolor:white;
+	--header-buttontextcolor:black;
+
+	/*NAV BAR*/
+	--navbar-color:#BEBEBE;
+	--navbar-textcolor:white;
+	--navbar-hovercolor:whitesmoke;
+	--navbar-hovertextcolor:black;
+	--navbar-activecolor:black;
+	--navbar-activetextcolor:white;
+
+	/*ABOUT*/
+	--about-color:whitesmoke;
+	--about-textcolor:black;
+
+	/*GALERIA*/
+	--galeria-color:white;
+	--galeria-textcolor:black;
+
+	/*CONTACTOS*/
+	--contactos-color:whitesmoke;
+	--contactos-textcolor:black;
+
+	/*NOTICIAS*/
+	--noticias-color:whitesmoke;
+	--noticias-textcolor:black;
+
+
+	/*FOOTER*/
+	--footer-color:black;
+	--footer-textcolor:white;
 }
 
 .header{
 	height: 100px;
 	padding: 30px;
-	background-color: black;
+	background-color: var(--header-color);
+	display: flex;
+	justify-content: space-between;
 }
 
+
 .header h1{
+	color:var(--header-textcolor);
 	text-align: left;
 }
+
+.theme-control{
+	position: relative;
+	width: 100px;
+	text-align: center;
+	font-weight: bold;
+}
+
+
+.menu-theme, .submenu-item-theme{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menu-theme a{
+	display: block;
+	background-color: white;
+	text-decoration: none;
+	padding: 10px;
+	color:black;
+}
+
+.menu-theme li:hover .submenu-item-theme{
+	display: block;
+}
+
+
+.submenu-item-theme {
+	display: none;
+}
+
+
+.theme-button-default{
+	background-color:whitesmoke;
+	color: black;
+	font-size: 16px;
+	border:none;
+	width: 100px;
+}
+
+
+.theme-button{
+	background-color:#773344;
+	color: white;
+	font-size: 16px;
+	border:none;
+	width: 100px;
+}
+
+.theme-button-green{
+	background-color:#45CA58;
+	color: white;
+	font-size: 16px;
+	border:none;
+	width: 100px;
+}
+
+.theme-button-red{
+	background-color: #BF0000;
+	color:white;
+	font-size: 16px;
+	border:none;
+	width: 100px;
+}
+
+.theme-button-blue{
+	background-color: #011F4B;
+	color: white;
+	font-size: 16px;
+	border:none;
+	width: 100px;
+}
+
+.theme-button-yellow{
+	background-color: #ffd300;
+	color:white;
+	font-size: 16px;
+	border:none;
+	width: 100px;
+}
+
 
 
 .main-row {
@@ -32,7 +156,7 @@ body{
 }
 
 .nav-bar {
-	background-color: #BEBEBE;
+	background-color:var(--navbar-color);
 	border-top: 2px solid white;
 	display: flex;
 	flex-direction: row;
@@ -54,14 +178,14 @@ body{
 }
 
 .nav-bar a:hover{
-	background-color: whitesmoke;
-	color:black;
+	background-color: var(--navbar-hovercolor);
+	color:var(--navbar-hovertextcolor);
 }
 
 .nav-bar li a.active{
 
-    background-color:#000000;
-    color: white;
+    background-color: var(--navbar-activecolor);
+    color: var(--navbar-activetextcolor);
     font-weight: bold;
 }
 
@@ -70,7 +194,6 @@ body{
 	width: 70%;
 	padding: 14px;  
 	background-color: white;
-	color:black;
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -92,7 +215,7 @@ body{
 
 .about {
 
-	background-color: whitesmoke;
+	background-color: var(--about-color);
 	margin: 50px;
 	width: 100%;
 	box-shadow: 0 0 5px gray;
@@ -114,6 +237,7 @@ body{
 }
 .galeria {
 	width: calc(33.33% - 20px);
+	background-color: var(--galeria-color);
 	margin: 10px;
 	margin-top: 40px;
 	padding: 5px;
@@ -130,6 +254,7 @@ body{
 }
 
 .galeria .descr{
+	color:var(--galeria-textcolor);
 	text-align: center;
 	margin-bottom: 5px;
 }
@@ -145,7 +270,7 @@ hr{
 .wrapper{
 	max-width: 800px;
 	margin: 70px auto;
-	background-color:whitesmoke;
+	background-color:var(--contactos-color);
 	padding: 40px;
 	box-shadow: 0 0 5px gray;
 
@@ -213,7 +338,7 @@ input {
 .noticias{
 
 	list-style: none;
-	background-color: whitesmoke;
+	background-color: var(--noticias-color);
 	width: 100%;
 	margin-top: 40px;
 	box-shadow: 2px 3px 6px #888888;
@@ -279,12 +404,12 @@ input {
 .footer{
 	height: 100px;
 	width: 100%;
-	background-color: black;
+	background-color: var(--footer-color);
 	padding: 30px;
 }
 
 div .info {
-	color: white;
+	color: var(--footer-textcolor);
 	text-align: center;
 }
 
@@ -292,4 +417,122 @@ div .info {
 	margin-top: 10px;
 	width: 30px;
 	height: 30px;
+}
+
+/* 
+------------------------
+
+Purple theme 
+
+-------------------------
+*/
+
+.theme-purple {
+	--header-color: #773344;
+	--header-textcolor:#f5e9e2;
+	--navbar-color:#e3b5a4;
+	--navbar-textcolor:#f5e9e2;
+	--navbar-hovercolor:whitesmoke;
+	--navbar-hovertextcolor:#773344;
+	--navbar-activecolor:#773344;
+	--navbar-activetextcolor:#f5e9e2;
+	--about-color:#f5e9e2;
+	--galeria-color:#f5e9e2;
+	--contactos-color:#f5e9e2;
+	--noticias-color:#f5e9e2;
+	--footer-color:#0b0014;
+}
+
+/* 
+------------------------
+
+GREEN theme 
+
+-------------------------
+*/
+
+.theme-green {
+	--header-color: #45ca58;
+	--header-textcolor:white;
+	--navbar-color:#cef1d3;
+	--navbar-textcolor:white;
+	--navbar-hovercolor:whitesmoke;
+	--navbar-hovertextcolor:#45ca58;
+	--navbar-activecolor:#45ca58;
+	--navbar-activetextcolor:white;
+	--about-color:#edfaef;
+	--galeria-color:#edfaef;
+	--contactos-color:#cef1d3;
+	--noticias-color:#cef1d3;
+	--footer-color:#2b973b;
+}
+
+/*-----------------------
+
+RED theme
+
+-------------------------
+*/
+
+.theme-red{
+	--header-color: #AA1520;
+	--header-textcolor:white;
+	--navbar-color:#CA7279;
+	--navbar-textcolor:white;
+	--navbar-hovercolor:whitesmoke;
+	--navbar-hovertextcolor:#CB1F26;
+	--navbar-activecolor:#CB1F26;
+	--navbar-activetextcolor:white;
+	--about-color:#faf1f2;
+	--galeria-color:#faf1f2;
+	--contactos-color:#faf1f2;
+	--noticias-color:#faf1f2;
+	--footer-color:#B51B23;
+}
+
+
+/*-----------------------
+
+BLUE theme
+
+-------------------------
+*/
+
+.theme-blue{
+	--header-color: #011F4B;
+	--header-textcolor:white;
+	--navbar-color:#b3cde0;
+	--navbar-textcolor:#005b96;
+	--navbar-hovercolor:whitesmoke;
+	--navbar-hovertextcolor:#005b96;
+	--navbar-activecolor:#005b96;
+	--navbar-activetextcolor:white;
+	--about-color:#b3cde0;
+	--galeria-color:#b3cde0;
+	--contactos-color:#b3cde0;
+	--noticias-color:#b3cde0;
+	--footer-color:#03396c;
+}
+
+/*-----------------------
+
+Yellow theme
+
+-------------------------
+*/
+
+.theme-yellow{
+	--header-color: #ffd300;
+	--header-textcolor:white;
+	--navbar-color:#ffe877;
+	--navbar-textcolor:white;
+	--navbar-hovercolor:whitesmoke;
+	--navbar-hovertextcolor:#ffea88;
+	--navbar-activecolor:#ffd300;
+	--navbar-activetextcolor:white;
+	--about-color:#fff9dd;
+	--galeria-color:#fff9dd;
+	--contactos-color:#fff9dd;
+	--noticias-color:#fff9dd;
+	--footer-color:#eec500;
 }

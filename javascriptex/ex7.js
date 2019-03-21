@@ -1,4 +1,7 @@
+//Lista Jogadores
 let jogadores=[
+	//Objeto para representar cada jogador
+
 	{
 		numero: 21,
 		posicao: 'medio',
@@ -74,7 +77,7 @@ let jogadores=[
 		posicao: 'avançado',
 		lesionado: false,
 		nome: {
-			primeiro: 'Joao'
+			primeiro: 'Joao',
 			ultimo: 'Felix'
 		} ,
 		foto: 'url',
@@ -153,6 +156,3 @@ let jogadores=[
 		equipas: ['Benfica']
 	},
 ]
-
-
-console.log(jogadores.nome);
