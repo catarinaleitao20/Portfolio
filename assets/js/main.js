@@ -97,7 +97,7 @@ let trabalhos=[
 	},	
 
 	{
-		nome:'bExercicio 3',
+		nome:'BExercicio 3',
 		imagem:'assets/images/ex3.png',
 		link:'exercicio3/ex3.html',
 		data:'11/03/2019',
@@ -212,14 +212,26 @@ if (noticia_containers.length > 0){
 let changeSortSelect = document.getElementById ('selected');
 if(changeSortSelect != null){
 	document.addEventListener('change',function(){
+		let saveSelect = changeSortSelect.value;
+		let sortProperty;
+		if (saveSelect==='val_nome'){
+			sortProperty = 'nome';
+		} else if (saveSelect === 'val_data'){
+			sortProperty='data';
+		}
+		
+
 		trabalhos.sort(function(a, b){
-			if (a.val_nome < b.val_nome)
-				return -1;
-			
-			if(a.val_nome > b.val_nome)
+			if (a[sortProperty] > b[sortProperty]){
 				return 1;
-			return 0;
+			}
+			
+			else{
+				return -1;
+			}
 		})
+		console.log(trabalhos);
 	})
+
 }
 
