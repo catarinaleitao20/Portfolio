@@ -73,3 +73,153 @@ function img_primeiro(){
 	return img;
 }
 
+let trabalhos=[
+	{
+		nome:'Algarve Nature',
+		imagem:'assets/images/landing_page.png',
+		link:'nature_algarve/index.html',
+		data:'11/03/2019',
+	},
+
+	{
+		nome:'DExercicio 1',
+		imagem:'assets/images/ex1.jpg',
+		link:'exercicio1/ex1.html',
+		data:'11/03/2019',
+
+	},
+
+	{	
+		nome:'CExercicio 2',
+		imagem:'assets/images/ex2.png',
+		link:'exercicio2/exercicio2.html',
+		data:'11/03/2019',
+	},	
+
+	{
+		nome:'bExercicio 3',
+		imagem:'assets/images/ex3.png',
+		link:'exercicio3/ex3.html',
+		data:'11/03/2019',
+	},
+
+	{
+		nome:'ZSite',
+		imagem:'assets/images/ex4.png',
+		link:'exercicio4/ex4.html',
+		data:'11/03/2019',
+	},
+
+	{
+		nome:'Exercicio 5',
+		imagem:'assets/images/ex5.png',
+		link:'exercicio5/ex5.html',
+		data:'11/03/2019',
+	}
+]
+
+let noticias=[
+	{
+		imagem:'assets/images/aq.jpg',
+		data:'11/03/2019',
+		titulo:'Android Q',
+		link:'noticia1.html',
+		button:'+',
+	},
+
+	{
+		imagem:'assets/images/vinho.jpg',
+		data:'11/03/2019',
+		titulo:'Garrafa de vinho para o Espaço',
+		link:'noticia2.html',
+		button:'+',
+	},
+
+	{
+		imagem:'assets/images/800.jpeg',
+		data:'11/03/2019',
+		titulo:'lorem ipsum dolor sit amet',
+		link:'noticia2.html',
+		button:'+',
+	},
+
+	{
+		imagem:'assets/images/aq.jpg',
+		data:'15/03/2019',
+		titulo:'Noticia1',
+		link:'noticia1.html',
+		button:'+',
+	},
+
+]
+
+let galerias = document.getElementsByClassName('galerias');
+if (galerias.length > 0){
+	let galeria = galerias[0];
+	for (let i = 0; i < 6; i++) {
+		
+		let trabalho = trabalhos[i];
+
+		setTimeout(
+			function() {
+
+				//console.log('Trabalho: '+trabalho.nome+' '+' - '+trabalho.data)
+				galeria.innerHTML = galeria.innerHTML+`
+					<div class="galeria">
+						<a href="${trabalho.link}"><img src="${trabalho.imagem}"></a>
+						<p class="date">${trabalho.data}</p>
+						<hr>
+						<div class="descr">${trabalho.nome}</div>
+					</div>
+				`;
+			},
+			250*i
+		);
+
+	}
+}
+
+let noticia_containers = document.getElementsByClassName('noticias');
+if (noticia_containers.length > 0){
+	let noticia_container = noticia_containers[0];
+	for (let i = 0; i < noticias.length; i++) {
+		
+		let noticia = noticias[i];
+
+		setTimeout(
+			function() {
+				//console.log('Trabalho: '+trabalho.nome+' '+' - '+trabalho.data)
+				noticia_container.innerHTML = noticia_container.innerHTML+`
+					<div class="noticia">
+							<div class="noticias-image">
+								<img src="${noticia.imagem}">
+							</div>
+
+							<div class="noticia-conteudo">
+								 <p class="date">${noticia.data}</p>
+								 <hr>
+				        		 <p> ${noticia.titulo} <a href="noticia1.html"> <button class="${noticia.link}">+</button></a></p>
+      						</div>
+						</div>
+				`;
+			},
+			250*i
+		);
+
+	}
+}
+
+let changeSortSelect = document.getElementById ('selected');
+if(changeSortSelect != null){
+	document.addEventListener('change',function(){
+		trabalhos.sort(function(a, b){
+			if (a.val_nome < b.val_nome)
+				return -1;
+			
+			if(a.val_nome > b.val_nome)
+				return 1;
+			return 0;
+		})
+	})
+}
+
