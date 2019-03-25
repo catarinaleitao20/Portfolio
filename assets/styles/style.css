@@ -96,10 +96,10 @@ body{
 
 
 .theme-button-default{
-	background-color:whitesmoke;
-	color: black;
+	background-color:black;
+	color: white;
 	font-size: 16px;
-	border:none;
+	border:1px solid white;
 	width: 100px;
 }
 
@@ -187,6 +187,11 @@ body{
     background-color: var(--navbar-activecolor);
     color: var(--navbar-activetextcolor);
     font-weight: bold;
+}
+
+.select{
+	display: flex;
+	justify-content:flex-end;
 }
 
 
@@ -343,7 +348,7 @@ input {
 	margin-top: 40px;
 	box-shadow: 2px 3px 6px #888888;
 	display: flex;
-	flex-wrap: nowrap; 
+	flex-wrap: wrap; 
 	max-height: 200vh;
 
 }
