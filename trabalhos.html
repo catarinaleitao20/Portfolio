@@ -10,7 +10,7 @@
 
 	<div class="container">
 		<div class="header">
-			<h1>Portfólio</h1>
+			<h1>Catarina Portfólio</h1>
 			<div class="theme-control">
 				<ul class="menu-theme">
 					<li><a href="">Temas</a>
@@ -38,8 +38,15 @@
 			<div class="main"> 
 				<div class="select">
 					<select id="selected">
-						<option value="val_data">Data</option>
-						<option value="val_nome">Nome</option>
+						<option selected>Sort</option>
+						<optgroup value="val_nome" label="Nome">
+							<option value="nome_asc">Nome A-Z</option>
+							<option value="nome_desc">Nome Z-A</option>
+						</optgroup>
+						<optgroup value="val_data" label="Data">
+							<option value="data_asc">Data_Asc</option>
+							<option value="data_desc">Data_Desc</option>
+						</optgroup>
 					</select>
 				</div>
 				<div class="galerias">
