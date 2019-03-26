@@ -78,14 +78,14 @@ let trabalhos=[
 		nome:'Algarve Nature',
 		imagem:'assets/images/landing_page.png',
 		link:'nature_algarve/index.html',
-		data:'11/03/2019',
+		data:'2019/12/11',
 	},
 
 	{
 		nome:'DExercicio 1',
 		imagem:'assets/images/ex1.jpg',
 		link:'exercicio1/ex1.html',
-		data:'11/03/2019',
+		data:'2017/07/27',
 
 	},
 
@@ -93,28 +93,28 @@ let trabalhos=[
 		nome:'CExercicio 2',
 		imagem:'assets/images/ex2.png',
 		link:'exercicio2/exercicio2.html',
-		data:'11/03/2019',
+		data:'2018/04/22',
 	},	
 
 	{
 		nome:'BExercicio 3',
 		imagem:'assets/images/ex3.png',
 		link:'exercicio3/ex3.html',
-		data:'11/03/2019',
+		data:'2014/11/20',
 	},
 
 	{
 		nome:'ZSite',
 		imagem:'assets/images/ex4.png',
 		link:'exercicio4/ex4.html',
-		data:'11/03/2019',
+		data:'2018/12/08',
 	},
 
 	{
 		nome:'Exercicio 5',
 		imagem:'assets/images/ex5.png',
 		link:'exercicio5/ex5.html',
-		data:'11/03/2019',
+		data:'2019/10/03',
 	}
 ]
 
@@ -153,31 +153,35 @@ let noticias=[
 
 ]
 
-let galerias = document.getElementsByClassName('galerias');
-if (galerias.length > 0){
-	let galeria = galerias[0];
-	for (let i = 0; i < 6; i++) {
-		
-		let trabalho = trabalhos[i];
+function renderGallery(){
+	let galerias = document.getElementsByClassName('galerias');
+	if (galerias.length > 0){
+		let galeria = galerias[0];
+		galeria.innerHTML = '';
+		for (let i = 0; i < 6; i++) {
+			
+			let trabalho = trabalhos[i];
 
-		setTimeout(
-			function() {
+			setTimeout(
+				function() {
 
-				//console.log('Trabalho: '+trabalho.nome+' '+' - '+trabalho.data)
-				galeria.innerHTML = galeria.innerHTML+`
-					<div class="galeria">
-						<a href="${trabalho.link}"><img src="${trabalho.imagem}"></a>
-						<p class="date">${trabalho.data}</p>
-						<hr>
-						<div class="descr">${trabalho.nome}</div>
-					</div>
-				`;
-			},
-			250*i
-		);
+					//console.log('Trabalho: '+trabalho.nome+' '+' - '+trabalho.data)
+					galeria.innerHTML = galeria.innerHTML+`
+						<div class="galeria">
+							<a href="${trabalho.link}"><img src="${trabalho.imagem}"></a>
+							<p class="date">${trabalho.data}</p>
+							<hr>
+							<div class="descr">${trabalho.nome}</div>
+						</div>
+					`;
+				},
+				250*i
+			);
 
+		}
 	}
-}
+} 
+renderGallery();
 
 let noticia_containers = document.getElementsByClassName('noticias');
 if (noticia_containers.length > 0){
@@ -213,25 +217,48 @@ let changeSortSelect = document.getElementById ('selected');
 if(changeSortSelect != null){
 	document.addEventListener('change',function(){
 		let saveSelect = changeSortSelect.value;
-		let sortProperty;
-		if (saveSelect==='val_nome'){
-			sortProperty = 'nome';
-		} else if (saveSelect === 'val_data'){
-			sortProperty='data';
-		}
-		
+		if (saveSelect==='nome_asc'){
 
-		trabalhos.sort(function(a, b){
-			if (a[sortProperty] > b[sortProperty]){
-				return 1;
-			}
+			trabalhos.sort(function(trab_a, trab_b){
+				if (trab_a.nome > trab_b.nome){
+					return 1;
+				}
+				
+				else{
+					return -1;
+				}
+			})
+		}else if (saveSelect === 'nome_desc'){
+			trabalhos.sort(function(trab_a, trab_b){
+				if (trab_a.nome < trab_b.nome){
+					return 1;
+				}
+				
+				else
+					return -1;
+			})
 			
-			else{
-				return -1;
-			}
-		})
-		console.log(trabalhos);
-	})
+		} else if (saveSelect === 'data_asc'){
+			trabalhos.sort(function(trab_a, trab_b){
+				if (trab_a.data > trab_b.data){
+					return 1;
+				}
+				
+				else
+					return -1;
+			})
+			
+		}else if(saveSelect === 'data_desc'){
+			trabalhos.sort(function(trab_a, trab_b){
+				if (trab_a.data < trab_b.data){
+					return 1;
+				}
+				else
+					return -1;
+			})
+		}	
 
+	renderGallery();
+	})
 }
 
