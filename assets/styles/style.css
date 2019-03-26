@@ -43,7 +43,6 @@ body{
 	--noticias-color:whitesmoke;
 	--noticias-textcolor:black;
 
-
 	/*FOOTER*/
 	--footer-color:black;
 	--footer-textcolor:white;
@@ -79,10 +78,11 @@ body{
 
 .menu-theme a{
 	display: block;
-	background-color: white;
+	background-color: var(--header-buttoncolor);
 	text-decoration: none;
 	padding: 10px;
-	color:black;
+	color:var(--header-buttontextcolor);
+	border:2px solid white;
 }
 
 .menu-theme li:hover .submenu-item-theme{
@@ -171,7 +171,7 @@ body{
 	padding: 10px 50px 10px 50px;
 	font-size: 20px;
 	display: block;
-	color: white;
+	color: var(--navbar-textcolor);
 	font-weight: bold;
 	text-decoration:none;
 	text-align: center;
@@ -350,7 +350,6 @@ input {
 	display: flex;
 	flex-wrap: wrap; 
 	max-height: 200vh;
-
 }
 
 .noticias-item{
@@ -435,6 +434,8 @@ Purple theme
 .theme-purple {
 	--header-color: #773344;
 	--header-textcolor:#f5e9e2;
+	--header-buttoncolor:#773344;
+	--header-buttontextcolor:white;
 	--navbar-color:#e3b5a4;
 	--navbar-textcolor:#f5e9e2;
 	--navbar-hovercolor:whitesmoke;
@@ -459,6 +460,8 @@ GREEN theme
 .theme-green {
 	--header-color: #45ca58;
 	--header-textcolor:white;
+	--header-buttoncolor:#45ca58;
+	--header-buttontextcolor:white;
 	--navbar-color:#cef1d3;
 	--navbar-textcolor:white;
 	--navbar-hovercolor:whitesmoke;
@@ -482,6 +485,8 @@ RED theme
 .theme-red{
 	--header-color: #AA1520;
 	--header-textcolor:white;
+	--header-buttoncolor:#AA1520;
+	--header-buttontextcolor:white;
 	--navbar-color:#CA7279;
 	--navbar-textcolor:white;
 	--navbar-hovercolor:whitesmoke;
@@ -506,6 +511,8 @@ BLUE theme
 .theme-blue{
 	--header-color: #011F4B;
 	--header-textcolor:white;
+	--header-buttoncolor:#011F4B;
+	--header-buttontextcolor:white;
 	--navbar-color:#b3cde0;
 	--navbar-textcolor:#005b96;
 	--navbar-hovercolor:whitesmoke;
@@ -528,11 +535,12 @@ Yellow theme
 
 .theme-yellow{
 	--header-color: #ffd300;
-	--header-textcolor:white;
+	--header-textcolor:#000033;
+	--header-buttoncolor:#ffd300;
 	--navbar-color:#ffe877;
-	--navbar-textcolor:white;
+	--navbar-textcolor:#000033;
 	--navbar-hovercolor:whitesmoke;
-	--navbar-hovertextcolor:#ffea88;
+	--navbar-hovertextcolor:#181818;
 	--navbar-activecolor:#ffd300;
 	--navbar-activetextcolor:white;
 	--about-color:#fff9dd;
