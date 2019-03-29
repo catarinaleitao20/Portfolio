@@ -124,7 +124,6 @@ let noticias=[
 		data:'11/03/2019',
 		titulo:'Android Q',
 		link:'noticia1.html',
-		button:'+',
 	},
 
 	{
@@ -132,7 +131,6 @@ let noticias=[
 		data:'11/03/2019',
 		titulo:'Garrafa de vinho para o Espaço',
 		link:'noticia2.html',
-		button:'+',
 	},
 
 	{
@@ -140,15 +138,13 @@ let noticias=[
 		data:'11/03/2019',
 		titulo:'lorem ipsum dolor sit amet',
 		link:'noticia2.html',
-		button:'+',
 	},
 
 	{
 		imagem:'assets/images/aq.jpg',
-		data:'15/03/2019',
-		titulo:'Noticia1',
+		data:'27/03/2019',
+		titulo:'Drones para prevenir incêndios',
 		link:'noticia1.html',
-		button:'+',
 	},
 
 ]
@@ -157,9 +153,10 @@ function renderGallery(){
 	let galerias = document.getElementsByClassName('galerias');
 	if (galerias.length > 0){
 		let galeria = galerias[0];
+		//limpar o contentor antes de inserir os elementos
 		galeria.innerHTML = '';
-		for (let i = 0; i < 6; i++) {
-			
+		//adiciona elemento a representar
+		for (let i = 0; i < trabalhos.length; i++) {
 			let trabalho = trabalhos[i];
 
 			setTimeout(
@@ -181,37 +178,38 @@ function renderGallery(){
 		}
 	}
 } 
+
 renderGallery();
 
-let noticia_containers = document.getElementsByClassName('noticias');
-if (noticia_containers.length > 0){
-	let noticia_container = noticia_containers[0];
-	for (let i = 0; i < noticias.length; i++) {
-		
-		let noticia = noticias[i];
+function renderBlog(){
 
-		setTimeout(
-			function() {
-				//console.log('Trabalho: '+trabalho.nome+' '+' - '+trabalho.data)
-				noticia_container.innerHTML = noticia_container.innerHTML+`
-					<div class="noticia">
-							<div class="noticias-image">
-								<img src="${noticia.imagem}">
-							</div>
+	let noticia_containers = document.getElementsByClassName('noticias');
+	if (noticia_containers.length > 0){
+		let noticia_container = noticia_containers[0];
+		noticia_container.innerHTML = '';
+		for (let i = 0; i < noticias.length; i++) {
+			
+			let noticia = noticias[i];
 
-							<div class="noticia-conteudo">
-								 <p class="date">${noticia.data}</p>
-								 <hr>
-				        		 <p> ${noticia.titulo} <a href="noticia1.html"> <button class="${noticia.link}">+</button></a></p>
-      						</div>
-						</div>
-				`;
-			},
-			250*i
-		);
+			setTimeout(
+				function() {
+					//console.log('Trabalho: '+trabalho.nome+' '+' - '+trabalho.data)
+					noticia_container.innerHTML = noticia_container.innerHTML+`
+						<div class="noticia">
+							<a href="${noticia.link}"><img src="${noticia.imagem}"></a>
+							<p class="date">${noticia.data}</p>
+							<hr>
+					        <p> ${noticia.titulo}</p>
+	      				</div>
+					`;
+				},
+				250*i
+			);
 
+		}
 	}
 }
+renderBlog();
 
 let changeSortSelect = document.getElementById ('selected');
 if(changeSortSelect != null){
@@ -262,3 +260,51 @@ if(changeSortSelect != null){
 	})
 }
 
+let changeSortSelectNot = document.getElementById ('selectedNot');
+if(changeSortSelectNot != null){
+	document.addEventListener('change',function(){
+		let saveSelect = changeSortSelectNot.value;
+		if (saveSelect==='nomenot_asc'){
+
+			noticias.sort(function(not_a, not_b){
+				if (not_a.titulo > not_b.titulo){
+					return 1;
+				}
+				
+				else{
+					return -1;
+				}
+			})
+		}else if (saveSelect === 'nomenot_desc'){
+			noticias.sort(function(not_a, not_b){
+				if (not_a.titulo < not_b.titulo){
+					return 1;
+				}
+				
+				else
+					return -1;
+			})
+			
+		} else if (saveSelect === 'datanot_asc'){
+			noticias.sort(function(not_a, not_b){
+				if (not_a.data > not_b.data){
+					return 1;
+				}
+				
+				else
+					return -1;
+			})
+			
+		}else if(saveSelect === 'datanot_desc'){
+			noticias.sort(function(not_a, not_b){
+				if (not_a.data < not_b.data){
+					return 1;
+				}
+				else
+					return -1;
+			})
+		}	
+
+	renderBlog();
+	})
+}
