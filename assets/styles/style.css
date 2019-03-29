@@ -46,9 +46,13 @@ body{
 	/*FOOTER*/
 	--footer-color:black;
 	--footer-textcolor:white;
+
+	/*TILE*/
+	--tile-button1:#f6b93b;
 }
 
-.backgorund-preloader{
+
+.background-preloader{
 	border:2px solid red;
 }
 
@@ -381,8 +385,7 @@ hr{
 
 .tile:hover .button1{
 	color:#000000;
-	background-color: #f6b93b;
-	
+	background-color: var(--tile-button1);
 	transform: translateY(0px);
 }
 
@@ -541,6 +544,7 @@ Purple theme
 	--contactos-color:#f5e9e2;
 	--noticias-color:#f5e9e2;
 	--footer-color:#0b0014;
+	--tile-button1:#773344;
 }
 
 /* 
@@ -567,6 +571,7 @@ GREEN theme
 	--contactos-color:#cef1d3;
 	--noticias-color:#cef1d3;
 	--footer-color:#2b973b;
+	--tile-button1:#45ca58;
 }
 
 /*-----------------------
@@ -592,6 +597,7 @@ RED theme
 	--contactos-color:#faf1f2;
 	--noticias-color:#faf1f2;
 	--footer-color:#B51B23;
+	--tile-button1: #AA1520;
 }
 
 
@@ -618,6 +624,7 @@ BLUE theme
 	--contactos-color:#b3cde0;
 	--noticias-color:#b3cde0;
 	--footer-color:#03396c;
+	--tile-button1:#011F4B;
 }
 
 /*-----------------------
@@ -642,4 +649,5 @@ Yellow theme
 	--contactos-color:#fff9dd;
 	--noticias-color:#fff9dd;
 	--footer-color:#eec500;
+	--tile-button1:#ffd300;
 }
