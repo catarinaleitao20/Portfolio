@@ -308,3 +308,11 @@ if(changeSortSelectNot != null){
 	renderBlog();
 	})
 }
+
+function fadeOut_ative(){
+	let fade = document.getElementsByClassName('background-preloader')[0];
+	fade.classList.add('fadeout');
+
+}
+
+setTimeout(fadeOut_ative, 1600);
