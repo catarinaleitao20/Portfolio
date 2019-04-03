@@ -48,7 +48,10 @@ body{
 	--footer-textcolor:white;
 
 	/*TILE*/
-	--tile-button1:#f6b93b;
+	--tile-color:#f5f5f5;
+	--tile-textcolor:black;
+	--tile-button1:black;
+	--tile-button-textcolor:white;
 
 	/*PRELOADER*/
 	--preloader-color: rgba(0,0,0,0.7);
@@ -58,21 +61,22 @@ body{
 
 .background-preloader{
 	background-color:var(--preloader-color);
-	/*background-color:rgba(120,160,255,0.7);*/
 	position: absolute;
 	top: 0;
 	left: 5px;
 	height: 100%;
 	width: 100%;
 	opacity: 1;
+	display: block;
+	visibility:visible;
 	transition: opacity 1s linear;
-
 }
 
 .fadeout{
+
 	display: none;
 	opacity: 0;
-	
+	visibility: hidden;
 }
 
 .loader{
@@ -193,8 +197,6 @@ body{
 	width: 100px;
 }
 
-
-
 .main-row {
 
 	min-height: calc(100vh - 100px - 100px);
@@ -285,37 +287,90 @@ body{
 /* Galeria */
 
 .galerias{
+margin: 50px auto 0 auto;
+	width: 100%;
 	display: flex;
-	flex-wrap: wrap; 
+	flex-wrap: wrap;
 
 }
-.galeria {
-	width: calc(33.33% - 20px);
-	background-color: var(--galeria-color);
+.tilegallery {
+	width: 260px;
+	height: 230px;
 	margin: 10px;
-	margin-top: 40px;
+	background-color: var(--tile-color);
+	display:inline-block;
+	background-size: cover;
+	position: relative;
+	transition: all 0.4s ease-out;
+	overflow:hidden;
+	color: var(--tile-textcolor);
+
+
+}
+
+.tilegallery img{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top:0;
+	left: 0;
+	z-index: 0;
+	transition: all 0.4s ease-out;
+}
+
+.tilegallery .texto{
+	position: absolute;
+	padding: 30px;
+	height:calc(100% - 60px);
+}
+
+.tilegallery .animate-text{
+	opacity:0;
+  transition: all 0.6s ease-in-out;
+
+}
+
+.tilegallery p{
+	font-weight: 300;
+	margin: 20px 0 0 0;
+	line-height: 25px;
+	transform: translateY(200px);
+	transition-delay:0.2s; 
+}
+
+
+.tilegallery:hover img{
+	opacity: 0.1;
+}
+
+.tilegallery:hover .animate-text{
+	transform: translateY(0);
+	opacity:1;
+}
+
+.tilegallery .button1{
+	background-color: var(--tile-button1);
+	color:var(--tile-button-textcolor);
+	width: 100px;
+	margin:10px;
 	padding: 5px;
-	border: 1px solid #ccc;
+	font-size: 15px;
+	border:2px solid #494949;
+	border-radius: 2px;
 	text-align: center;
+	display: inline-block;
+	text-decoration: none;
+	transform: translateY(200px);
+	transition: all 0.4s ease;
 
 }
 
-.galeria img{
-	width: 250px;
-	height: 150px;
-	margin: 5px;
-	border-radius: 5px;
+.tilegallery:hover .button1{
+	color:var(--tile-button-textcolor);
+	background-color: var(--tile-button1);
+	transform: translateY(0px);
 }
 
-.galeria .descr{
-	color:var(--galeria-textcolor);
-	text-align: center;
-	margin-bottom: 5px;
-}
-
-hr{
-	margin-bottom: 10px;
-}
 
 
 /** Serviços */
@@ -330,13 +385,13 @@ hr{
 	width: 280px;
 	height: 280px;
 	margin: 10px;
-	background-color: #f5f5f5;
+	background-color: var(--tile-color);
 	display:inline-block;
 	background-size: cover;
 	position: relative;
 	transition: all 0.4s ease-out;
 	overflow:hidden;
-	color: black;
+	color: var(--tile-textcolor);
 
 }
 
@@ -389,8 +444,8 @@ hr{
 }
 
 .tile .button1{
-	background-color: white;
-	color:black;
+	background-color: var(--tile-button1);
+	color:var(--tile-button-textcolor);
 	width: 100px;
 	margin:10px;
 	padding: 5px;
@@ -406,7 +461,7 @@ hr{
 }
 
 .tile:hover .button1{
-	color:#000000;
+	color:var(--tile-button-textcolor);
 	background-color: var(--tile-button1);
 	transform: translateY(0px);
 }
@@ -488,37 +543,84 @@ input {
 	flex-wrap: wrap;
 }
 
-.noticia{
-	width: calc(33.33% - 20px);
-	list-style: none;
-	background-color: var(--noticias-color);
+.tilenoticia {
+	width: 260px;
+	height: 230px;
 	margin: 10px;
-	margin-top: 40px;
+	background-color: var(--tile-color);
+	display:inline-block;
+	background-size: cover;
+	position: relative;
+	transition: all 0.4s ease-out;
+	overflow:hidden;
+	color: var(--tile-textcolor);
+
+
+}
+
+.tilenoticia img{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top:0;
+	left: 0;
+	z-index: 0;
+	transition: all 0.4s ease-out;
+}
+
+.tilenoticia .texto{
+	position: absolute;
+	padding: 30px;
+	height:calc(100% - 60px);
+}
+
+.tilenoticia .animate-text{
+	opacity:0;
+  transition: all 0.6s ease-in-out;
+
+}
+
+.tilenoticia p{
+	font-weight: 300;
+	margin: 20px 0 0 0;
+	line-height: 25px;
+	transform: translateY(200px);
+	transition-delay:0.2s; 
+}
+
+
+.tilenoticia:hover img{
+	opacity: 0.1;
+}
+
+.tilenoticia:hover .animate-text{
+	transform: translateY(0);
+	opacity:1;
+}
+
+.tilenoticia .button1{
+	background-color: var(--tile-button1);
+	color:var(--tile-button-textcolor);
+	width: 100px;
+	margin:10px;
 	padding: 5px;
-	border:1px solid #ccc;
+	font-size: 15px;
+	border:2px solid #494949;
+	border-radius: 2px;
 	text-align: center;
-}
-
-.noticia img{
-	width: 250px;
-	height: 150px;
-	margin: 5px;
-	border-radius: 5px;
-}
-
-.noticia.descr{
-	color:var(--galeria-textcolor);
-	text-align: center;
-	margin-bottom: 5px;
-}
-
-
-.date::before {
-	content: "\1f4c5"; 
-	color: red; font-size: 15px; 
-	margin:5px;
+	display: inline-block;
+	text-decoration: none;
+	transform: translateY(200px);
+	transition: all 0.4s ease;
 
 }
+
+.tilenoticia:hover .button1{
+	color:var(--tile-button-textcolor);
+	background-color: var(--tile-button1);
+	transform: translateY(0px);
+}
+
 
 
 /*footer */
@@ -566,7 +668,10 @@ Purple theme
 	--contactos-color:#f5e9e2;
 	--noticias-color:#f5e9e2;
 	--footer-color:#0b0014;
+	--tile-color:rgba(119,51,68,0.5);
+	--tile-textcolor:white;
 	--tile-button1:#773344;
+	--tile-button-textcolor:white;
 	--preloader-color:rgba(119,51,68,0.7);
 	--loader-color:#773344;
 }
@@ -595,6 +700,8 @@ GREEN theme
 	--contactos-color:#cef1d3;
 	--noticias-color:#cef1d3;
 	--footer-color:#2b973b;
+	--tile-color:rgba(69,202,88,0.5);
+	--tile-textcolor:white;
 	--tile-button1:#45ca58;
 	--preloader-color:rgba(69,202,88,0.7);
 	--loader-color:#45ca58;
@@ -623,11 +730,13 @@ RED theme
 	--contactos-color:#faf1f2;
 	--noticias-color:#faf1f2;
 	--footer-color:#B51B23;
+	--tile-color:rgba(170,21,32,0.5);
+	--tile-textcolor:white;
 	--tile-button1: #AA1520;
 	--preloader-color:rgba(170,21,32,0.7);
 	--loader-color:#AA1520;
 }
-}
+
 
 
 /*-----------------------
@@ -653,6 +762,8 @@ BLUE theme
 	--contactos-color:#b3cde0;
 	--noticias-color:#b3cde0;
 	--footer-color:#03396c;
+	--tile-color:rgba(1,31,75,0.5);
+	--tile-textcolor:white;
 	--tile-button1:#011F4B;
 	--preloader-color:rgba(1,31,75,0.7);
 	--loader-color:#011F4B;
@@ -680,7 +791,9 @@ Yellow theme
 	--contactos-color:#fff9dd;
 	--noticias-color:#fff9dd;
 	--footer-color:#eec500;
+	--tile-color:rgba(255,211,0,0.5);
 	--tile-button1:#ffd300;
+	--tile-button-textcolor:black;
 	--preloader-color:rgba(255,211,0,0.7);
 	--loader-color:#ffd300;
 }
