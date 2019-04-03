@@ -77,44 +77,57 @@ let trabalhos=[
 	{
 		nome:'Algarve Nature',
 		imagem:'assets/images/landing_page.png',
+		descr:'Landing Page',
 		link:'nature_algarve/index.html',
 		data:'2019/12/11',
+		botao:'Read More',
 	},
 
 	{
 		nome:'DExercicio 1',
 		imagem:'assets/images/ex1.jpg',
+		descr:'The Civil Service',
 		link:'exercicio1/ex1.html',
 		data:'2017/07/27',
+		botao:'Read More',
 
 	},
 
 	{	
 		nome:'CExercicio 2',
 		imagem:'assets/images/ex2.png',
+		descr:'Exercicio dos estilos',
 		link:'exercicio2/exercicio2.html',
 		data:'2018/04/22',
+		botao:'Read More',
+
 	},	
 
 	{
 		nome:'BExercicio 3',
 		imagem:'assets/images/ex3.png',
+		descr:'MPS coders group',
 		link:'exercicio3/ex3.html',
 		data:'2014/11/20',
+		botao:'Read More',
 	},
 
 	{
 		nome:'ZSite',
 		imagem:'assets/images/ex4.png',
+		descr:'Site',
 		link:'exercicio4/ex4.html',
 		data:'2018/12/08',
+		botao:'Read More',
 	},
 
 	{
 		nome:'Exercicio 5',
 		imagem:'assets/images/ex5.png',
+		descr:'Texto com animação',
 		link:'exercicio5/ex5.html',
 		data:'2019/10/03',
+		botao:'Read More',
 	}
 ]
 
@@ -122,54 +135,86 @@ let noticias=[
 	{
 		imagem:'assets/images/aq.jpg',
 		data:'11/03/2019',
-		titulo:'Android Q',
+		nome:'Android Q',
 		link:'noticia1.html',
+		botao:'Read More',
 	},
 
 	{
 		imagem:'assets/images/vinho.jpg',
 		data:'11/03/2019',
-		titulo:'Garrafa de vinho para o Espaço',
+		nome:'Garrafa de vinho para o Espaço',
 		link:'noticia2.html',
+		botao:'Read More',
 	},
 
 	{
 		imagem:'assets/images/800.jpeg',
 		data:'11/03/2019',
-		titulo:'lorem ipsum dolor sit amet',
+		nome:'lorem ipsum dolor sit amet',
 		link:'noticia2.html',
+		botao:'Read More',
 	},
 
 	{
-		imagem:'assets/images/aq.jpg',
+		imagem:'assets/images/aviao.jpeg',
 		data:'27/03/2019',
-		titulo:'Drones para prevenir incêndios',
+		nome:'Drones para prevenir incêndios',
 		link:'noticia1.html',
+		botao:'Read More',
 	},
 
 ]
 
+let servicos =[
+	{
+		imagem: 'https://placeimg.com/280/280/tech?t=1553861338545',
+		titulo: 'Web Development',
+		descricao: 'ipsum dolor amet pork belly.',
+		botao: 'Read More',
+	},
+
+	{
+		imagem: 'https://placeimg.com/280/280',
+		titulo: 'Web Designer',
+		descricao: 'ipsum dolor amet pork belly.',
+		botao: 'Read More',
+	},
+
+	{
+		imagem: 'https://placeimg.com/280/280/tech',
+		titulo: 'Front-End Developer',
+		descricao: 'ipsum dolor lorem.',
+		botao: 'Read More',
+	},
+
+]
+
+
+
 function renderGallery(){
 	let galerias = document.getElementsByClassName('galerias');
 	if (galerias.length > 0){
-		let galeria = galerias[0];
+		let tilegallery = galerias[0];
 		//limpar o contentor antes de inserir os elementos
-		galeria.innerHTML = '';
+		tilegallery.innerHTML = '';
 		//adiciona elemento a representar
 		for (let i = 0; i < trabalhos.length; i++) {
 			let trabalho = trabalhos[i];
 
 			setTimeout(
-				function() {
+				function() { 
 
-					//console.log('Trabalho: '+trabalho.nome+' '+' - '+trabalho.data)
-					galeria.innerHTML = galeria.innerHTML+`
-						<div class="galeria">
-							<a href="${trabalho.link}"><img src="${trabalho.imagem}"></a>
-							<p class="date">${trabalho.data}</p>
-							<hr>
-							<div class="descr">${trabalho.nome}</div>
+					tilegallery.innerHTML = tilegallery.innerHTML+`
+						<div class="tilegallery">
+						<img src="${trabalho.imagem}">
+						<div class="texto">
+							<h2 class="animate-text"> ${trabalho.nome}</h2>
+							<p class="animate-text">${trabalho.descr}</p>
+							<p class="animate-text">${trabalho.data}</p>
+							<a href="${trabalho.link}" class="button1">${trabalho.botao}</a>
 						</div>
+					</div>
 					`;
 				},
 				250*i
@@ -186,21 +231,26 @@ function renderBlog(){
 	let noticia_containers = document.getElementsByClassName('noticias');
 	if (noticia_containers.length > 0){
 		let noticia_container = noticia_containers[0];
+
+		//limpar o contentor antes de inserir os elementos
 		noticia_container.innerHTML = '';
+		//adiciona elemento a representar
 		for (let i = 0; i < noticias.length; i++) {
 			
 			let noticia = noticias[i];
 
 			setTimeout(
 				function() {
-					//console.log('Trabalho: '+trabalho.nome+' '+' - '+trabalho.data)
 					noticia_container.innerHTML = noticia_container.innerHTML+`
-						<div class="noticia">
-							<a href="${noticia.link}"><img src="${noticia.imagem}"></a>
-							<p class="date">${noticia.data}</p>
-							<hr>
-					        <p> ${noticia.titulo}</p>
-	      				</div>
+						<div class="tilenoticia">
+						<img src="${noticia.imagem}">
+						<div class="texto">
+							<h2 class="animate-text"> ${noticia.nome}</h2>
+							<p class="animate-text"></p>
+							<p class="animate-text">${noticia.data}</p>
+							<a href="${noticia.link}" class="button1">${noticia.botao}</a>
+						</div>
+					</div>
 					`;
 				},
 				250*i
@@ -210,6 +260,39 @@ function renderBlog(){
 	}
 }
 renderBlog();
+
+function renderServices(){
+	//document.getElementsByClass retorna uma lista 
+	let servico_containers = document.getElementsByClassName('wrap');
+	console.log(servico_containers);
+	if (servico_containers.length > 0){
+		let servico_container = servico_containers[0];
+
+		//limpar o contentor antes de inserir os elementos
+		servico_container.innerHTML='';
+		
+		//adiciona elemento a representar
+		for(let i = 0; i < servicos.length; i++){
+			let servico = servicos[i];
+			setTimeout(
+				function(){
+					servico_container.innerHTML = servico_container.innerHTML+ `
+						<div class="tile">
+						<img src="${servico.imagem}">
+						<div class="texto">
+							<h2 class="animate-text"> ${servico.titulo}</h2>
+							<p class="animate-text">${servico.descricao}</p>
+							<a href="" class="button1">${servico.botao}</a>
+						</div>
+					</div> 
+					`;
+				},
+				250*i
+			);
+		}
+	}
+}
+renderServices();
 
 let changeSortSelect = document.getElementById ('selected');
 if(changeSortSelect != null){
