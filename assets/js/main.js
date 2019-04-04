@@ -264,7 +264,6 @@ renderBlog();
 function renderServices(){
 	//document.getElementsByClass retorna uma lista 
 	let servico_containers = document.getElementsByClassName('wrap');
-	console.log(servico_containers);
 	if (servico_containers.length > 0){
 		let servico_container = servico_containers[0];
 
@@ -393,9 +392,19 @@ if(changeSortSelectNot != null){
 }
 
 function fadeOut_ative(){
-	let fade = document.getElementsByClassName('background-preloader')[0];
-	fade.classList.add('fadeout');
-
+	let fade = document.getElementsByClassName('background-preloader');
+	if(fade.length>0){
+		fade[0].classList.add('fadeout');
+	}
 }
 
 setTimeout(fadeOut_ative, 1600);
+
+//Botão Submit
+let b_submit = document.getElementsByClassName('form');
+b_submit[0].addEventListener('submit', function(event){
+	event.preventDefault();
+	alert("Hello");
+});
+
+//Notificação
