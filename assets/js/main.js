@@ -401,10 +401,21 @@ function fadeOut_ative(){
 setTimeout(fadeOut_ative, 1600);
 
 //Botão Submit
-let b_submit = document.getElementsByClassName('form');
-b_submit[0].addEventListener('submit', function(event){
-	event.preventDefault();
-	alert("Hello");
-});
+function notifyfade_inactive(){
+	let notify_fadeOut = document.getElementsByClassName('notify_box');
+	if (notify_fadeOut.length>0) {
+		notify_fadeOut[0].classList.add('notifyfade');
+	}
+}
 
-//Notificação
+let b_submit = document.getElementsByClassName('form');
+let notifyfade_active = document.getElementsByClassName('notify_box');
+if(b_submit.length>0){
+	b_submit[0].addEventListener('submit', function(event){
+		event.preventDefault();
+		notifyfade_active[0].classList.toggle('notifyfade');
+			setTimeout(notifyfade_inactive, 5000);
+
+	})
+}
+

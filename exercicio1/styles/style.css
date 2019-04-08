@@ -9,6 +9,8 @@ body{
 }
 
 .principal{
+	position: absolute;
+	bottom: 40%;
 	width: 400px;
 
 }
